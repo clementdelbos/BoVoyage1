@@ -88,7 +88,7 @@ public class DestinationTest {
 		Destination d1 = new Destination("paris", "aller à Paris");		
 		assertNotNull(d1.getFormules());
 	}
-
+	
 	@Test
 	public void testSetFormules() {
 		
