@@ -45,7 +45,7 @@ public class ClientTest {
 	public void testSetNumeroTelClient() {
 		Client c1 = new Client ("toto", "000");
 		c1.setNumeroTelClient("111");
-		assertEquals("111", c1.getNumeroTelClient());
+		assertEquals("111", c1.getNumeroTelClient()); 
 	}
 
 	@Test

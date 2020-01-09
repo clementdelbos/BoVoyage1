@@ -6,8 +6,8 @@ import java.time.LocalDate;
 
 import org.junit.Test;
 
-import fr.gtm.BoVoyage.entities.Formule;
-
+import fr.gtm.BoVoyage.entities.Formule; 
+ 
 public class FormuleTest {
 	
 	private LocalDate date = LocalDate.of(2020, 01, 01);
