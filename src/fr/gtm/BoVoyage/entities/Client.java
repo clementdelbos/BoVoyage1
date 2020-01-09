@@ -51,6 +51,13 @@ public class Client {
 	public void setVoyages(List<Voyage> voyages) {
 		this.voyages = voyages;
 	}
+	
+	
+	// un clien peut un ajouter un voyage même s'il existe en doublon
+	
+	public void add(Voyage v) {
+		voyages.add(v);
+	}
 
 	@Override
 	public String toString() {

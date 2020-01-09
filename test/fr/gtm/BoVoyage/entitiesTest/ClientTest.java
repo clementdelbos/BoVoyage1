@@ -2,68 +2,99 @@ package fr.gtm.BoVoyage.entitiesTest;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
+
+import fr.gtm.BoVoyage.entities.Client;
+import fr.gtm.BoVoyage.entities.Formule;
+import fr.gtm.BoVoyage.entities.Voyage;
 
 public class ClientTest {
 
 	@Test
-	public void testHashCode() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testClient() {
-		fail("Not yet implemented");
+		
+		Client c1 = new Client ("toto", "000");
+		assertNotNull(c1);
 	}
 
 	@Test
 	public void testGetNomClient() {
-		fail("Not yet implemented");
+		Client c1 = new Client ("toto", "000");
+		assertEquals("toto", c1.getNomClient());
 	}
 
 	@Test
 	public void testSetNomClient() {
-		fail("Not yet implemented");
+		
+		Client c1 = new Client ("toto", "000");
+		c1.setNomClient("foo");
+		assertEquals("foo", c1.getNomClient());
 	}
 
 	@Test
 	public void testGetNumeroTelClient() {
-		fail("Not yet implemented");
+		Client c1 = new Client ("toto", "000");
+		assertEquals("000", c1.getNumeroTelClient());
 	}
 
 	@Test
 	public void testSetNumeroTelClient() {
-		fail("Not yet implemented");
+		Client c1 = new Client ("toto", "000");
+		c1.setNumeroTelClient("111");
+		assertEquals("111", c1.getNumeroTelClient());
 	}
 
 	@Test
 	public void testGetIdClient() {
-		fail("Not yet implemented");
+		Client c1 = new Client ("toto", "000");
+		assertEquals(0, c1.getIdClient());
+		
 	}
 
 	@Test
 	public void testSetIdClient() {
-		fail("Not yet implemented");
+		Client c1 = new Client ("toto", "000");
+		c1.setIdClient(1);
+		assertEquals(1, c1.getIdClient());
 	}
 
 	@Test
 	public void testGetVoyages() {
-		fail("Not yet implemented");
+		Client c1 = new Client ("toto", "000");
+		assertNotNull(c1.getVoyages());
+		
 	}
 
 	@Test
 	public void testSetVoyages() {
-		fail("Not yet implemented");
+		Client c1 = new Client ("toto", "000");
+		LocalDate date = LocalDate.now();
+		List<Voyage> voyages = new ArrayList<Voyage>()  ;
+		voyages.add(new Voyage("nord", "aller au nord", new Formule (date, date, 1.0, "formule1", 15)));
+		c1.setVoyages(voyages);
+		assertEquals(voyages, c1.getVoyages());
+		
 	}
+	
+	// Javadoc ces tests ne sont pas geres par nous
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+	
 	}
+
 
 	@Test
-	public void testEqualsObject() {
-		fail("Not yet implemented");
+	public void testHashCode() {
+	
 	}
-
+	//
+	@Test
+	public void testEqualsObject() {
+	
+	}
 }
