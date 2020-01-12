@@ -8,6 +8,11 @@ public class Voyage {
 	private String region;
 	private String descriptif;
 	private Formule formule;
+
+/**
+ * On créé un attribut de type liste de voyageur 
+ */
+
 	private List<Voyageur> voyageurs = new ArrayList<Voyageur>();
 	
 	
@@ -68,7 +73,24 @@ public class Voyage {
 	public void setIdVoyage(long idVoyage) {
 		this.idVoyage = idVoyage;
 	}
+	
+	
+	
+	public void addVoyageur(Voyageur v) {
+		if (voyageurs.size() < 9) {
+			voyageurs.add(v);
+		}
+	}
+	
+	// est -ce qu'il faut une variable Prix?
+	public double getPrixVoyage() {
+		return this.getFormule().getPrixFormule()* this.getVoyageurs().size();
+	}
 
+
+/**
+ * Permet de definir id comme clé primaire (en cas d'utilisation de map à la place des listes)
+ */
 
 	@Override
 	public int hashCode() {

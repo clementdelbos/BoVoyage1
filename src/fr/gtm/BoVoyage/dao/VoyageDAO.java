@@ -6,6 +6,9 @@ import fr.gtm.BoVoyage.entities.Client;
 import fr.gtm.BoVoyage.entities.Voyage;
 import fr.gtm.BoVoyage.entities.Voyageur;
 
+/**
+ * On créé une interface afin d'empêcher l'utilisateur de modifier la base de données
+ */
 
 public interface VoyageDAO {
 	

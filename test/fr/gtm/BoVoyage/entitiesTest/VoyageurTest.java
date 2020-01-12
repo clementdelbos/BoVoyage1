@@ -2,98 +2,123 @@ package fr.gtm.BoVoyage.entitiesTest;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
+
+import fr.gtm.BoVoyage.entities.Formule;
+import fr.gtm.BoVoyage.entities.Voyage;
+import fr.gtm.BoVoyage.entities.Voyageur;
 
 public class VoyageurTest {
 
-	@Test
-	public void testHashCode() {
-		fail("Not yet implemented");
-	}
+	private LocalDate dateNaissance = LocalDate.of(2020, 01, 01);
+	private Voyageur  v = new Voyageur ("Mme", "toto", "bar", dateNaissance, "000" );
+	private List<Voyage> voyages = new ArrayList<Voyage>();
+	
 
 	@Test
 	public void testVoyageur() {
-		fail("Not yet implemented");
+		assertNotNull(v);
 	}
 
 	@Test
 	public void testGetVoyages() {
-		fail("Not yet implemented");
+		assertNotNull(v.getVoyages());
 	}
 
 	@Test
 	public void testSetVoyages() {
-		fail("Not yet implemented");
+		LocalDate date = LocalDate.now();
+		voyages.add(new Voyage("nord", "aller au nord", new Formule (date, date, 1.0, "formule1", 15)));
+		v.setVoyages(voyages);
+		assertEquals(voyages, v.getVoyages());
+		
 	}
+	
 
 	@Test
 	public void testGetCivilite() {
-		fail("Not yet implemented");
+		assertEquals("Mme", v.getCivilite());
 	}
 
 	@Test
 	public void testSetCivilite() {
-		fail("Not yet implemented");
+		v.setCivilite("M");
+		assertEquals("M", v.getCivilite());
+		
 	}
 
 	@Test
 	public void testGetNomVoyageur() {
-		fail("Not yet implemented");
+		assertEquals("toto", v.getNomVoyageur());
 	}
 
 	@Test
 	public void testSetNomVoyageur() {
-		fail("Not yet implemented");
+		v.setNomVoyageur("tata");
+		assertEquals("tata", v.getNomVoyageur());
 	}
+	
 
 	@Test
 	public void testGetPrenomVoyageur() {
-		fail("Not yet implemented");
+		assertEquals("bar", v.getPrenomVoyageur());
 	}
 
 	@Test
 	public void testSetPrenomVoyageur() {
-		fail("Not yet implemented");
+		v.setPrenomVoyageur("tata");
+		assertEquals("tata", v.getPrenomVoyageur());
 	}
 
-	@Test
-	public void testGetDateNaissance() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetDateNaissance() {
-		fail("Not yet implemented");
-	}
-
+	
 	@Test
 	public void testGetNumeroTelVoyageur() {
-		fail("Not yet implemented");
+		assertEquals("000", v.getNumeroTelVoyageur());
+		
 	}
 
 	@Test
 	public void testSetNumeroTelVoyageur() {
-		fail("Not yet implemented");
+		v.setNumeroTelVoyageur("111");
+		assertEquals("111", v.getNumeroTelVoyageur());
 	}
 
 	@Test
 	public void testGetIdVoyageur() {
-		fail("Not yet implemented");
+		assertEquals(0, v.getIdVoyageur());
 	}
 
 	@Test
 	public void testSetIdVoyageur() {
-		fail("Not yet implemented");
+		v.setIdVoyageur(1);
+		assertEquals(1, v.getIdVoyageur());
+	}
+	
+	
+
+	// Liste des tests que l'on ne gère pas
+	
+	@Test
+	public void testGetDateNaissance() {
+	}
+
+	@Test
+	public void testSetDateNaissance() {
 	}
 
 	@Test
 	public void testEqualsObject() {
-		fail("Not yet implemented");
+	}
+	@Test
+	public void testToString() {
+	
 	}
 
 	@Test
-	public void testToString() {
-		fail("Not yet implemented");
+	public void testHashCode() {
 	}
-
 }

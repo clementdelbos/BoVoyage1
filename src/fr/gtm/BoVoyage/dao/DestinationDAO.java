@@ -5,6 +5,12 @@ import java.util.List;
 import fr.gtm.BoVoyage.entities.Destination;
 import fr.gtm.BoVoyage.entities.Formule;
 
+
+/**
+ * On créé une interface afin d'empêcher l'utilisateur de modifier la base de données
+ */
+
+
 public interface DestinationDAO 
 {
 

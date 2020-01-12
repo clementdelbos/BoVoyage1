@@ -2,8 +2,14 @@ package fr.gtm.BoVoyage.entities;
 
 import java.util.ArrayList; 
 import java.util.List;
-
-public class Client {
+/**
+ *
+ * 
+ * 
+ * @author adminl
+ 
+ */
+public class Client {   
 
 	private String nomClient;
 	private String numeroTelClient;
@@ -40,9 +46,7 @@ public class Client {
 
 	public void setIdClient(long idClient) {
 		this.idClient = idClient;
-	}
-
-	
+	}	
 
 	public List<Voyage> getVoyages() {
 		return voyages;
@@ -55,8 +59,8 @@ public class Client {
 	
 	// un clien peut un ajouter un voyage même s'il existe en doublon
 	
-	public void add(Voyage v) {
-		voyages.add(v);
+	public void addVoyage(Voyage v) {
+			voyages.add(v);		
 	}
 
 	@Override

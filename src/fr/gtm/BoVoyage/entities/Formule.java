@@ -73,6 +73,12 @@ public class Formule {
 		this.nbPlacesFormule = nbPlacesFormule;
 	}
 
+
+/**
+ * Permet de definir id comme clé primaire (en cas d'utilisation de map à la place des listes)
+ */
+
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

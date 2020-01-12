@@ -13,70 +13,73 @@ import fr.gtm.BoVoyage.entities.Formule;
 import fr.gtm.BoVoyage.entities.Voyage;
 
 public class ClientTest {
+	
+	private LocalDate date = LocalDate.now();
+	private Client c1 = new Client ("toto", "000");
+	private List<Voyage> voyages = new ArrayList<Voyage>()  ;
+	Voyage v1 = new Voyage("nord", "aller au nord", new Formule (date, date, 1.0, "formule1", 15));
 
 	@Test
 	public void testClient() {
 		
-		Client c1 = new Client ("toto", "000");
 		assertNotNull(c1);
 	}
 
 	@Test
 	public void testGetNomClient() {
-		Client c1 = new Client ("toto", "000");
 		assertEquals("toto", c1.getNomClient());
 	}
 
 	@Test
 	public void testSetNomClient() {
-		
-		Client c1 = new Client ("toto", "000");
+
 		c1.setNomClient("foo");
 		assertEquals("foo", c1.getNomClient());
 	}
 
 	@Test
 	public void testGetNumeroTelClient() {
-		Client c1 = new Client ("toto", "000");
 		assertEquals("000", c1.getNumeroTelClient());
 	}
 
 	@Test
 	public void testSetNumeroTelClient() {
-		Client c1 = new Client ("toto", "000");
 		c1.setNumeroTelClient("111");
 		assertEquals("111", c1.getNumeroTelClient()); 
 	}
 
 	@Test
 	public void testGetIdClient() {
-		Client c1 = new Client ("toto", "000");
 		assertEquals(0, c1.getIdClient());
 		
 	}
 
 	@Test
 	public void testSetIdClient() {
-		Client c1 = new Client ("toto", "000");
 		c1.setIdClient(1);
 		assertEquals(1, c1.getIdClient());
 	}
 
 	@Test
 	public void testGetVoyages() {
-		Client c1 = new Client ("toto", "000");
 		assertNotNull(c1.getVoyages());
 		
 	}
 
 	@Test
 	public void testSetVoyages() {
-		Client c1 = new Client ("toto", "000");
-		LocalDate date = LocalDate.now();
-		List<Voyage> voyages = new ArrayList<Voyage>()  ;
-		voyages.add(new Voyage("nord", "aller au nord", new Formule (date, date, 1.0, "formule1", 15)));
+		voyages.add(v1);
 		c1.setVoyages(voyages);
-		assertEquals(voyages, c1.getVoyages());
+		assertTrue(c1.getVoyages().contains(v1));
+		
+	}
+	
+	// on part du principe qu'on peut ajouter deux voyage identiques
+	@Test
+	public void testAddVoyage() {
+		c1.addVoyage(v1);
+		assertTrue(c1.getVoyages().contains(v1));
+		
 		
 	}
 	
